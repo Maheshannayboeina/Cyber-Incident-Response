@@ -1,31 +1,33 @@
 {
-    "financial fraud": {
+    "Financial Fraud": {
         "info": [
             "Involves deceitful practices to illegally obtain funds from victims.",
             "This includes unauthorized banking transactions, Ponzi schemes, and phishing for financial data."
-         ],
+        ],
         "post_attack_steps": [
             "Immediately report the unauthorized transaction to your bank.",
             "Freeze the affected accounts to prevent further unauthorized use.",
             "Change all associated passwords and security questions.",
-            "File a complaint with your local police station or cybercrime police station."
+            "File a complaint with your local police station or cybercrime police station.",
+            "Check your credit report for any new, unauthorized accounts opened in your name."
         ],
         "helplines": {
-             "Cyber Crime Helpline Number": "1930",
-             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
+            "Cyber Crime Helpline Number": "1930",
+            "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
             "Reserve Bank of India (RBI) Helpline": "14440"
-           }
+        }
     },
-    "social media account hacked": {
-         "info": [
+    "Social Media Account Hacked": {
+        "info": [
             "Unauthorized access and misuse of someone’s social media account.",
             "Often used to spread false information or to scam friends and followers."
-          ],
+        ],
         "post_attack_steps": [
             "Change your password immediately and log out of all other devices.",
             "Enable two-factor authentication for enhanced security.",
             "Notify your friends and followers about the breach.",
-            "Use the platform’s built-in recovery process to regain control."
+            "Use the platform’s built-in recovery process to regain control.",
+            "Report the incident to the social media platform for further investigation."
         ],
         "helplines": {
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
@@ -34,139 +36,148 @@
             "Instagram Help Center": "https://help.instagram.com"
         }
     },
-    "identity theft": {
+    "Identity Theft": {
         "info": [
-           "Theft of personal information to impersonate someone.",
-           "Often used to carry out fraudulent activities like opening new credit accounts."
+            "Theft of personal information to impersonate someone.",
+            "Often used to carry out fraudulent activities like opening new credit accounts."
         ],
         "post_attack_steps": [
             "Notify banks, financial institutions, and credit bureaus about the theft.",
             "Place a fraud alert on your credit reports.",
             "File an FIR at your local police station.",
-            "Monitor your accounts and statements regularly for suspicious activity."
+            "Monitor your accounts and statements regularly for suspicious activity.",
+            "Check your credit score for any unusual activity."
         ],
-       "helplines": {
+        "helplines": {
             "Cyber Crime Helpline Number": "1930",
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
         }
     },
-   "ransomware": {
+    "Ransomware": {
         "info": [
             "A type of malicious software that encrypts the victim’s data.",
-             " Demands a ransom for its release."
-            ],
-         "post_attack_steps": [
+            "Demands a ransom for its release."
+        ],
+        "post_attack_steps": [
             "Disconnect the affected device from all networks.",
             "Avoid paying the ransom; instead, seek professional IT assistance.",
             "Report the incident to local law enforcement.",
-            "Restore data from backups if available."
+            "Restore data from backups if available.",
+            "Notify your IT support to help identify and contain the attack."
         ],
         "helplines": {
             "Cyber Crime Helpline Number": "1930",
             "Indian Computer Emergency Response Team (CERT-In)": "incident@cert-in.org.in"
         }
     },
-    "phishing": {
-         "info": [
-             "Deceptive emails or messages that appear to be from legitimate sources.",
+    "Phishing": {
+        "info": [
+            "Deceptive emails or messages that appear to be from legitimate sources.",
             "Often used to steal sensitive data like login credentials or financial information."
-         ],
+        ],
         "post_attack_steps": [
             "Do not click on suspicious links or download attachments from unknown sources.",
             "Change passwords for accounts that might have been compromised.",
-            "Report the phishing attempt to the relevant platform."
+            "Report the phishing attempt to the relevant platform.",
+            "Install an anti-phishing tool or browser extension to protect against future attempts."
         ],
-         "helplines": {
+        "helplines": {
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
         }
     },
-    "online shopping scam": {
-       "info": [
-           "Fraudulent e-commerce websites or sellers that deceive customers.",
-           "Often involves payment for goods that are never delivered."
+    "Online Shopping Scam": {
+        "info": [
+            "Fraudulent e-commerce websites or sellers that deceive customers.",
+            "Often involves payment for goods that are never delivered."
         ],
         "post_attack_steps": [
-           "Contact your bank or payment provider to dispute the transaction.",
-           "Report the seller or website to consumer protection authorities.",
-           "Provide evidence of the scam to help investigations."
-       ],
+            "Contact your bank or payment provider to dispute the transaction.",
+            "Report the seller or website to consumer protection authorities.",
+            "Provide evidence of the scam to help investigations.",
+            "File a complaint with the National Consumer Helpline."
+        ],
         "helplines": {
             "Cyber Crime Helpline Number": "1930",
             "National Consumer Helpline": "1800-11-4000"
         }
     },
-    "malware": {
+    "Malware": {
         "info": [
-             "Malicious software designed to damage or disable computers and computer systems.",
+            "Malicious software designed to damage or disable computers and computer systems.",
             "This includes viruses, worms, and trojan horses."
         ],
         "post_attack_steps": [
             "Run a full system scan using reliable antivirus software.",
             "Remove or quarantine the detected threats.",
-            "Update your software and operating system to the latest versions."
+            "Update your software and operating system to the latest versions.",
+            "Back up important files and data regularly to prevent data loss."
         ],
         "helplines": {
             "Indian Computer Emergency Response Team (CERT-In)": "incident@cert-in.org.in"
         }
     },
-   "cyberbullying": {
+    "Cyberbullying": {
         "info": [
-           "Bullying or harassment using digital platforms.",
-           "Often involving threats, spreading lies, or sharing private photos without consent."
+            "Bullying or harassment using digital platforms.",
+            "Often involving threats, spreading lies, or sharing private photos without consent."
         ],
         "post_attack_steps": [
             "Document and save evidence of the cyberbullying.",
             "Block the bully on all platforms and report their behavior.",
-            "Seek support from friends, family, or professional counseling."
+            "Seek support from friends, family, or professional counseling.",
+            "Contact the platform to report the incident and request action."
         ],
-         "helplines": {
+        "helplines": {
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
-             "Local Police Station": "Contact your local police"
+            "Local Police Station": "Contact your local police"
         }
     },
-   "social engineering": {
+    "Social Engineering": {
         "info": [
-           "Manipulating people into giving up confidential information.",
+            "Manipulating people into giving up confidential information.",
             "Often by pretending to be a trustworthy individual."
-           ],
+        ],
         "post_attack_steps": [
             "Be cautious of unsolicited requests for personal information.",
             "Verify the identity of the person or organization before sharing sensitive data.",
-           "Educate yourself and others on common social engineering tactics."
+            "Educate yourself and others on common social engineering tactics.",
+            "Notify the organization or entity the attacker impersonated."
         ],
         "helplines": {
             "Cyber Crime Helpline Number": "1930",
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
         }
     },
-    "vishing": {
+    "Vishing": {
         "info": [
-           "Voice phishing attacks that trick victims into revealing personal information over the phone.",
+            "Voice phishing attacks that trick victims into revealing personal information over the phone.",
             "Often done by pretending to be a trustworthy individual or organization."
         ],
-         "post_attack_steps": [
+        "post_attack_steps": [
             "Do not share personal information over unsolicited calls.",
-             "Contact your bank or the organization directly using official contact numbers.",
-             "Report the incident to the relevant authorities."
+            "Contact your bank or the organization directly using official contact numbers.",
+            "Report the incident to the relevant authorities.",
+            "Warn others about the vishing attempt to prevent further attacks."
         ],
         "helplines": {
             "Cyber Crime Helpline Number": "1930",
-             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
+            "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
         }
     },
-   "blackmailing": {
-       "info": [
-           "Threatening to reveal compromising information unless demands are met.",
-           "Often involving financial extortion."
-           ],
+    "Blackmailing": {
+        "info": [
+            "Threatening to reveal compromising information unless demands are met.",
+            "Often involving financial extortion."
+        ],
         "post_attack_steps": [
-           "Do not engage with the blackmailer or give in to their demands.",
+            "Do not engage with the blackmailer or give in to their demands.",
             "Collect and save evidence of the threats.",
-            "Report the incident to law enforcement."
-       ],
+            "Report the incident to law enforcement.",
+            "Consider seeking legal advice or a restraining order."
+        ],
         "helplines": {
             "Cyber Crime Helpline Number": "1930",
             "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/"
-       }
+        }
     }
 }
