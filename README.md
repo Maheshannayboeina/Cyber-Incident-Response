@@ -24,7 +24,7 @@ This is a website built using Flask and Machine Learning, designed to help users
 
 1.  Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Maheshannayboeina/Cyber-Incident-Response.git
     ```
 2.  Navigate to the project directory:
     ```bash
