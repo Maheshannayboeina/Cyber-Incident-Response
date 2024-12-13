@@ -1,0 +1,13 @@
+description,label
+"I received a suspicious email asking for my password","phishing"
+"My bank account was debited without my knowledge","financial fraud"
+"My social media account was accessed by someone else","social media account hacked"
+"My computer files are encrypted and asking for ransom","ransomware"
+"I keep getting pop-up ads on my browser","malware"
+"someone is trying to bully me online","cyberbullying"
+"Someone pretended to be my bank and asked for my credentials","vishing"
+"someone is threatening to reveal my secrets if I don't pay","blackmailing"
+"I received fake messages from my friend on social media","social engineering"
+"I ordered something online but never received it","online shopping scam"
+"I'm getting an error when accessing my server","denial of service"
+"my credit card was used to buy things","identity theft"
