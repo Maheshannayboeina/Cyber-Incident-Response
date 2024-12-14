@@ -5,15 +5,132 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-12 mx-auto">
-                <h1 class="text-white text-center">Contact Us</h1>
-                <h6 class="text-center">If you have any questions, please contact us.</h6>
+                <h1 class="text-white text-center">Report an Incident</h1>
+                <h6 class="text-center">Please fill out the form below to report an incident.</h6>
                 <div class="contact-container">
                     <p class="text-center contact-text">Contact us at: <a
-                            href="mailto:info@example.com">info@example.com</a></p>
-                    <p class="text-center contact-text">Call us at: <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            href="mailto:info@sakec.ac.in">info@sakec.ac.in</a></p>
+                    <p class="text-center contact-text">Call us at: <a href="tel:022-25580854">022-25580854</a></p>
                 </div>
+
+                <div class="mt-5">
+                    <h2 class="text-center text-white">Report an Incident</h2>
+                      <div class="mb-3 text-white text-center">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="registration_type" value="anonymous" id="anonymous_radio" checked>
+                            Anonymous Report
+                        </label>
+                        <label class="form-check-label ms-3">
+                            <input type="radio" class="form-check-input" name="registration_type" value="registered" id="registered_radio">
+                           Report with Details
+                        </label>
+                    </div>
+                    <form method="post" class="contact-form" id="report_form">
+                        <div id="registered_fields">
+                        <div class="mb-3">
+                            <label for="name" class="form-label text-white">Your Name</label>
+                            <input type="text" class="form-control rounded-input" id="name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-white">Your Email</label>
+                            <input type="email" class="form-control rounded-input" id="email" name="email">
+                        </div>
+                         <div class="mb-3">
+                            <label for="mobile" class="form-label text-white">Mobile Number</label>
+                            <input type="tel" class="form-control rounded-input" id="mobile" name="mobile">
+                        </div>
+                        </div>
+                        <div class="mb-3">
+                             <label for="state" class="form-label text-white">State</label>
+                             <select class="form-select rounded-input" id="state" name="state" required>
+                                <option value="" disabled selected>Select a state</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                 <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                 <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                 <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                         </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label text-white">Location of Incident</label>
+                            <input type="text" class="form-control rounded-input" id="location" name="location" required>
+                        </div>
+                       <div class="mb-3">
+                            <label for="date" class="form-label text-white">Date of Incident</label>
+                            <input type="date" class="form-control rounded-input" id="date" name="date" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="description" class="form-label text-white">Description of Incident</label>
+                            <textarea class="form-control rounded-input" id="description" name="description" rows="5" required style="text-align: left;"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Send Report</button>
+                        </div>
+                    </form>
+                    {% if success %}
+                    <div class="alert alert-success mt-3">
+                        Report sent successfully!
+                    </div>
+                    {% endif %}
+                    {% if error %}
+                    <div class="alert alert-danger mt-3">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                </div>
+
+
             </div>
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const anonymousRadio = document.getElementById('anonymous_radio');
+    const registeredRadio = document.getElementById('registered_radio');
+    const registeredFields = document.getElementById('registered_fields');
+
+    function toggleFields() {
+      if (anonymousRadio.checked) {
+        registeredFields.style.display = 'none';
+         document.getElementById('name').removeAttribute('required');
+          document.getElementById('email').removeAttribute('required');
+           document.getElementById('mobile').removeAttribute('required');
+      } else {
+        registeredFields.style.display = 'block';
+        document.getElementById('name').setAttribute('required','');
+          document.getElementById('email').setAttribute('required','');
+          document.getElementById('mobile').setAttribute('required','');
+      }
+    }
+
+    toggleFields(); // Initial setup
+
+    anonymousRadio.addEventListener('change', toggleFields);
+    registeredRadio.addEventListener('change', toggleFields);
+  });
+</script>
 {% endblock %}

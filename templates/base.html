@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{% block title %}Incident Response{% endblock %}</title>
+    <title>{% block title %}Crime RD{% endblock %}</title>
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url_for('index') }}">
                     <i class="bi-back"></i>
-                    <span>Incident Response</span>
+                    <span>Crime Reporting Dashboard</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">
                     <a href="#top" class="navbar-icon bi-person"></a>
@@ -52,8 +52,12 @@
                             <a class="nav-link {% if request.path == url_for('analytics') %}active{% endif %}"
                                 href="{{ url_for('analytics') }}">Analytics</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == url_for('learn') %}active{% endif %}"
+                                href="{{ url_for('learn') }}">Learn</a>
+                        </li>
                     </ul>
-                    <div class="d-flex align-items-center">
+                    <!-- <div class="d-flex align-items-center">
                          <div class="dropdown lang-dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -66,8 +70,8 @@
                                 <li><button class="dropdown-item" type="button">Bengali</button></li>
                                 <li><button class="dropdown-item" type="button">Kannada</button></li>
                             </ul>
-                        </div>
-                        <a href="#top" class="navbar-icon bi-person"></a>
+                        </div> -->
+                        <!-- <a href="#top" class="navbar-icon bi-person"></a> -->
                     </div>
                 </div>
             </div>
@@ -93,34 +97,44 @@
                         <li class="site-footer-link-item">
                             <a href="{{ url_for('analytics') }}" class="site-footer-link">Analytics</a>
                         </li>
+                        <li class="site-footer-link-item">
+                            <a href="{{ url_for('learn') }}" class="site-footer-link">Learn</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
                     <h6 class="site-footer-title mb-3">Information</h6>
                     <p class="text-white d-flex mb-1">
-                        <a href="tel: 305-240-9671" class="site-footer-link">
-                            305-240-9671
+                        <a href="tel:022-25580854" class="site-footer-link">
+                            022-25580854
                         </a>
                     </p>
                     <p class="text-white d-flex">
-                        <a href="mailto:info@company.com" class="site-footer-link">
-                            info@company.com
+                        <a href="mailto:info@sakec.ac.in" class="site-footer-link">
+                            info@sakec.ac.in
+                        </a>
+                    </p>
+                    <p class="text-white d-flex">
+                        <a href="https://www.google.com/maps/place/Shah+%26+Anchor+Kutchhi+Engineering+College/@19.048507,72.911583,16z/data=!4m6!3m5!1s0x3be7c5f39a7d77d1:0x9ebbdeaea9ec24ae!8m2!3d19.0485065!4d72.9115831!16zL20vMGN5eDJq?hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" class="site-footer-link" target="_blank">
+                            Mahavir Education Trust Chowk, W.T Patil Marg, D P Rd, next to Duke's Company, Chembur, Mumbai, Maharashtra 400088
                         </a>
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-4 col-12 mb-4 mb-lg-0">
-                    <h6 class="site-footer-title mb-3">Legal</h6>
+                    <h6 class="site-footer-title mb-3">Socials</h6>
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="https://www.usa.gov/privacy" class="site-footer-link" target="_blank">Privacy
-                                Policy</a>
+                            <a href="https://www.instagram.com/sakec_chembur/?hl=en" class="site-footer-link" target="_blank">Instagram</a>
                         </li>
                         <li class="site-footer-link-item">
-                            <a href="https://www.usa.gov/accessibility" class="site-footer-link"
-                                target="_blank">Accessibility</a>
+                            <a href="https://in.linkedin.com/school/sakec/" class="site-footer-link"
+                                target="_blank">LinkedIn</a>
                         </li>
                         <li class="site-footer-link-item">
-                            <a href="https://www.fbi.gov/" class="site-footer-link" target="_blank">FBI</a>
+                            <a href="https://twitter.com/sakec?lang=en" class="site-footer-link" target="_blank">Twitter</a>
+                        </li>
+                        <li class="site-footer-link-item">
+                            <a href="https://www.facebook.com/@shahanchor/" class="site-footer-link" target="_blank">Facebook</a>
                         </li>
                     </ul>
                 </div>

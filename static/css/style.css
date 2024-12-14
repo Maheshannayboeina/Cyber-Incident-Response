@@ -589,3 +589,6 @@ resize: none;
     background-color: #13547a; /* Change to your preferred active color */
      border: 1px solid #13547a;
 }
+.rounded-input {
+  border-radius: 18px; /* Adjust the value to control the roundness */
+}

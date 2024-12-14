@@ -40,6 +40,10 @@ def contact():
 def analytics():
     return render_template('analytics.html')
 
+@app.route('/learn')
+def learn():
+    return render_template('learn.html')
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
