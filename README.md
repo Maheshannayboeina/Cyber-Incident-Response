@@ -16,9 +16,8 @@ This is a website built using Flask and Machine Learning, designed to help users
 
 -   **Frontend:** HTML, CSS, JavaScript, Bootstrap
 -   **Backend:** Python, Flask
--   **Machine Learning:** scikit-learn (for text classification), gensim (for word embeddings)
+-   **Machine Learning:** scikit-learn (for text classification)
 -   **Text Preprocessing:** NLTK or SpaCy for text pre-processing
--   **Database:** (Optional, but you can add one to store data for analysis)
 
 ## Setup Instructions
 
