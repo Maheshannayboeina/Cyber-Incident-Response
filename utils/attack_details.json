@@ -87,7 +87,7 @@
         "Cyber Crime Helpline Number": "1930",
         "Indian Computer Emergency Response Team (CERT-In)": "incident@cert-in.org.in",
         "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
-        "Local Cyber Crime Police Station": "https://cybercrime.gov.in/Webform/PoliceStation.aspx"
+        "Local Cyber Crime Police Station": "https://www.cybercrimehelpline.com/cyber-crime-police-stations-cells/"
       }
     },
     "Phishing": {
@@ -165,8 +165,8 @@
       ],
       "helplines": {
         "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
-        "Local Police Station": "Contact your local police station or the nearest cybercrime police station",
-        "National Commission for Women": "https://ncw.nic.in/",
+        "Local Police Station": "https://www.cybercrimehelpline.com/cyber-crime-police-stations-cells/",
+        "National Commission for Women": "http://ncw.nic.in/",
         "Childline India Helpline": "1098",
         "National Commission for Protection of Child Rights": "https://ncpcrcr.gov.in/"
       }
@@ -208,8 +208,8 @@
       "helplines": {
         "Cyber Crime Helpline Number": "1930",
         "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
-         "Local Cyber Crime Police Station": "https://cybercrime.gov.in/Webform/PoliceStation.aspx",
-          "Telecom Regulatory Authority of India (TRAI) - Complaint Portal": "https://trai.gov.in/consumer-corner/complaints/how-to-register-complaint"
+        "Local Cyber Crime Police Station": "https://www.cybercrimehelpline.com/cyber-crime-police-stations-cells/",
+        "Telecom Regulatory Authority of India (TRAI) - Complaint Portal": "https://trai.gov.in/consumer-corner/complaints/how-to-register-complaint"
       }
     },
     "Blackmailing": {
@@ -229,8 +229,8 @@
       "helplines": {
         "Cyber Crime Helpline Number": "1930",
         "National Cyber Crime Reporting Portal": "https://cybercrime.gov.in/",
-         "National Commission for Women": "https://ncw.nic.in/",
-         "National Human Rights Commission of India": "https://nhrc.nic.in/"
+        "National Commission for Women": "http://ncw.nic.in/",
+        "National Human Rights Commission of India": "https://nhrc.nic.in/"
       }
     }
   }

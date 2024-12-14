@@ -15,7 +15,12 @@
                         {{ prediction }}
                     </span>
                 </p>
-                <p class="text-white"><strong>Details:</strong> {{ info }}</p>
+                <h2 class="text-white">Details:</h2>
+                <div class="text-white">
+                   {% for item in info %}
+                        <p class = "text-white">{{ item }}</p>
+                    {% endfor %}
+                </div>
                 <h2 class="text-white">Post-Attack Steps:</h2>
                 <ul class="text-white">
                     {% for step in steps %}
