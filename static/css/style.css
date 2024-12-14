@@ -289,7 +289,6 @@ strong {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  transition: all 0.3s ease;
 }
 
 .navbar-icon:hover {

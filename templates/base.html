@@ -28,7 +28,7 @@
                     <span>Incident Response</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">
-                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                    <a href="#top" class="navbar-icon bi-person"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,19 +37,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll {% if request.path == url_for('index') %}active{% endif %}"
+                            <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}"
                                 href="{{ url_for('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll {% if request.path == url_for('about') %}active{% endif %}"
+                            <a class="nav-link {% if request.path == url_for('about') %}active{% endif %}"
                                 href="{{ url_for('about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll {% if request.path == url_for('contact') %}active{% endif %}"
+                            <a class="nav-link {% if request.path == url_for('contact') %}active{% endif %}"
                                 href="{{ url_for('contact') }}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll {% if request.path == url_for('analytics') %}active{% endif %}"
+                            <a class="nav-link {% if request.path == url_for('analytics') %}active{% endif %}"
                                 href="{{ url_for('analytics') }}">Analytics</a>
                         </li>
                     </ul>
@@ -67,7 +67,7 @@
                                 <li><button class="dropdown-item" type="button">Kannada</button></li>
                             </ul>
                         </div>
-                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="#top" class="navbar-icon bi-person"></a>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,6 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/click-scroll.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 </body>
 
