@@ -5,14 +5,92 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-12 mx-auto">
-                <h1 class="text-white text-center">Report an Incident</h1>
-                 <h6 class="text-center">Describe what happened and we will try to analyze it for you.</h6>
+                <h1 class="text-white text-center">Analyse an Incident</h1>
+                 <h6 class="text-center">Unsure about a cyber incident? We can help you analyse it. Just tell us what happened.</h6>
                  <form method="post" action="{{ url_for('predict') }}" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
                       <textarea name="description" class="form-control" id="description" placeholder="Describe what happened" rows="5" aria-label="Incident description"></textarea>
-                      <button type="submit" class="form-control new-line-button">Analyze Incident</button>
+                      <button type="submit" class="form-control new-line-button">Analyse Incident</button>
                  </form>
+             </div>
+         </div>
+    </div>
+</section>
+
+<section class="video-section">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="text-white text-center mb-4">Cyber Awareness Videos</h2>
+                <h6 class="text-center mb-4">These videos are a result of our student's commitment to cybersecurity</h6>
+                <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/d5K1g4qoHHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" class="youtube-video"></iframe>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/d5K1g4qoHHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" class="youtube-video"></iframe>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/d5K1g4qoHHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" class="youtube-video"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('videoCarousel');
+    const videos = document.querySelectorAll('.youtube-video');
+    if (!carousel) {
+      console.log("Carousel not found");
+      return;
+    }
+
+    function pauseCarousel() {
+      carousel.dataset.bsInterval = 'false';
+      console.log("paused");
+    }
+
+    function resumeCarousel() {
+      carousel.dataset.bsInterval = '5000';
+      console.log("resumed");
+    }
+
+    videos.forEach(video => {
+      video.addEventListener('play', function() {
+        pauseCarousel();
+      });
+
+      video.addEventListener('pause', function() {
+        resumeCarousel();
+      });
+
+      video.addEventListener('ended', function() {
+        resumeCarousel();
+      });
+    });
+  });
+</script>
 {% endblock %}
