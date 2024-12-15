@@ -1,73 +1,306 @@
 {% extends 'base.html' %}
-{% block title %}Analytics - Incident Response{% endblock %}
+{% block title %}Analytics - Crime RD{% endblock %}
 {% block head %}
-<style>
-    #heatmap-container {
-        height: 500px;
-        width: 100%
-    }
-</style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock %}
 {% block content %}
 <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-12 mx-auto">
-                <h1 class="text-white text-center">Real-Time Cybercrime Analytics (India)</h1>
-                <h6 class="text-center">A visual representation of cybercrime trends. (Mockup)</h6>
+                <h1 class="text-white text-center">Cybercrime Analytics</h1>
+                <h6 class="text-center">Explore trends and insights related to cybercrime.</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12 mx-auto">
                 <div class="analytics-container">
-                    <div id="heatmap-container" style="height: 500px; background: #eee; margin-top: 20px;">
-                        <p style="text-align: center; padding: 150px;">Heatmap Placeholder: Real-time data visualization will
-                            be displayed here </p>
+                    <!-- <p class="text-center analytics-text">Cybercrime statistics and trends.</p> -->
+                    <div class="mt-4 text-center" style="background-color: #f0f8ff; padding: 20px; border-radius: 10px;">
+                        <div style="display:flex; justify-content:space-around;">
+                              <div>
+                                 <h2 class="mb-3">Analysed Incidents</h2>
+                                 <h1 id="analysed-incidents" style="font-size:3em;">0</h1>
+                            </div>
+                              <div>
+                                <h2 class="mb-3">Reported Incidents</h2>
+                                <h1 id="reported-incidents" style="font-size:3em;">0</h1>
+                            </div>
+                              <div>
+                                <h2 class="mb-3">Solved Incidents</h2>
+                                <h1 id="solved-incidents" style="font-size:3em;">0</h1>
+                           </div>
+                         </div>
                     </div>
-                    <p class="text-center analytics-text">This page is for showing real-time statistics of cyber crimes in
-                        India. The heat map will show how the crimes are distributed geographically. </p>
-                    <p class="text-center analytics-text">This is a mockup and the data is not live.</p>
+                    <div id="charts-container" class="mt-4">
+                        <div class="row mt-5" style="max-height:800px; overflow-y: auto;">
+                            <div class="col-md-6" style="height: 500px;">
+                                <h3 class="text-center">Incident Types</h3>
+                               <canvas id="attackTypeChart" aria-label="Bar Chart" role="img" style="max-height: 400px;"></canvas>
+                            </div>
+                            <div class="col-md-6" style="height: 500px;">
+                                <h3 class="text-center">Incident Locations</h3>
+                               <canvas id="incidentLocationChart" aria-label="Pie Chart" role="img"  style="max-height: 400px;"></canvas>
+                            </div>
+                            <div class="col-md-12 mt-5" style="height: 500px;">
+                                 <h3 class="text-center">Incident Over Time</h3>
+                               <canvas id="timeSeriesChart"  aria-label="Line Chart" role="img"  style="max-height: 400px;"></canvas>
+                           </div>
+                           <div class="col-md-12 mt-5" style="height: 500px;">
+                             <h3 class="text-center">Incident Type by Location</h3>
+                               <canvas id="stackedBarChart"  aria-label="Stacked Bar Chart" role="img"  style="max-height: 400px;"></canvas>
+                           </div>
+                           <div class="col-md-12 mt-5">
+                                <h3 class="text-center">Recent Reports</h3>
+                                <table id="recentReportsTable" class="table">
+                                    <thead>
+                                        <tr>
+                                          <th>Date</th>
+                                          <th>Attack Type</th>
+                                          <th>State</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Recent report rows will be added here -->
+                                    </tbody>
+                                </table>
+                           </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-ZxogXyjRz6d1aH1i/74sZ98v7u1yK77Z6w7J66gq74=" crossorigin=""></script>
 <script>
-    function initMap() {
-        var mapDiv = document.getElementById('heatmap-container')
-        if (!mapDiv) {
-            console.error("Heatmap container element not found!");
-            return;
+    document.addEventListener('DOMContentLoaded', function() {
+          const analysedIncidentsElement = document.getElementById('analysed-incidents');
+          const reportedIncidentsElement = document.getElementById('reported-incidents');
+          const solvedIncidentsElement = document.getElementById('solved-incidents');
+          const totalReportsElement = document.getElementById('total-reports');
+
+          // Function to fetch and update total reports
+         // Function to fetch and update total reports
+        function fetchAndUpdateTotalReports() {
+           fetch('/api/total-reports')
+               .then(response => response.json())
+                 .then(data => {
+                      //Remove total reports
+                })
+                 .catch(error => {
+                   console.error("Error fetching total reports data:", error);
+               });
+          }
+           fetchAndUpdateTotalReports();
+        // Function to fetch and update incident counts
+        function fetchAndUpdateIncidentCounts() {
+                fetch('/api/incident-counts')
+                 .then(response => response.json())
+                     .then(data => {
+                           analysedIncidentsElement.textContent = data.analysed_incidents;
+                            reportedIncidentsElement.textContent = data.reported_incidents;
+                           solvedIncidentsElement.textContent = data.solved_incidents;
+                 })
+                    .catch(error => {
+                         console.error("Error fetching incident counts data:", error);
+                            analysedIncidentsElement.textContent = "Error";
+                            reportedIncidentsElement.textContent = "Error";
+                           solvedIncidentsElement.textContent = "Error";
+                        });
+                }
+
+         fetchAndUpdateIncidentCounts();
+
+        // Function to create bar chart
+        function createBarChart(data) {
+            const ctx = document.getElementById('attackTypeChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        label: 'Number of Reports',
+                        data: Object.values(data),
+                         backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+              options: {
+                responsive: true,
+               maintainAspectRatio: false,
+                    scales: {
+                         y: {
+                             beginAtZero: true
+                         }
+                      }
+                }
+            });
         }
-        console.log("mapDiv is:", mapDiv)
-        var map = L.map('heatmap-container').setView([20.5937, 78.9629], 5); // India coordinates and zoom level
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-        var cyberCrimeData = [ // Mock Data
-            [28.7041, 77.1025, 10],
-            [19.0760, 72.8777, 15],
-            [12.9716, 77.5946, 20],
-            [22.5726, 88.3639, 12],
-            [26.9124, 75.7873, 10]
-        ];
-        // Convert mock data to circle markers
-        cyberCrimeData.forEach(function (incident) {
-            L.circle([incident[0], incident[1]], {
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: incident[2] * 1000
-            }).addTo(map);
+
+        // Function to create pie chart
+         function createPieChart(data) {
+             const ctx = document.getElementById('incidentLocationChart').getContext('2d');
+              new Chart(ctx, {
+                  type: 'pie',
+                  data: {
+                       labels: Object.keys(data),
+                       datasets: [{
+                         label: 'Number of Reports',
+                         data: Object.values(data),
+                        backgroundColor: [
+                             'rgba(255, 99, 132, 0.7)',
+                                    'rgba(255, 159, 64, 0.7)',
+                                    'rgba(255, 205, 86, 0.7)',
+                                   'rgba(75, 192, 192, 0.7)',
+                                    'rgba(54, 162, 235, 0.7)',
+                                    'rgba(153, 102, 255, 0.7)',
+                                    'rgba(201, 203, 207, 0.7)',
+                                      'rgba(255, 99, 132, 0.7)',
+                                    'rgba(255, 159, 64, 0.7)',
+                                    'rgba(255, 205, 86, 0.7)',
+                                   'rgba(75, 192, 192, 0.7)',
+                                    'rgba(54, 162, 235, 0.7)',
+                                    'rgba(153, 102, 255, 0.7)',
+                                    'rgba(201, 203, 207, 0.7)'
+                              ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                  'rgba(255, 159, 64, 1)',
+                                   'rgba(255, 205, 86, 1)',
+                                   'rgba(75, 192, 192, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                    'rgba(201, 203, 207, 1)',
+                                     'rgba(255, 99, 132, 1)',
+                                  'rgba(255, 159, 64, 1)',
+                                   'rgba(255, 205, 86, 1)',
+                                   'rgba(75, 192, 192, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                   'rgba(201, 203, 207, 1)'
+                              ],
+                         borderWidth: 1
+                           }]
+                    },
+                 options: {
+                 responsive: true,
+                 maintainAspectRatio: false,
+                  }
+               });
+         }
+
+
+        // Function to create time series chart
+       function createTimeSeriesChart(data) {
+          const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+             new Chart(ctx, {
+                type: 'line',
+                 data: {
+                    labels: data.map(item => item[0]),
+                    datasets: [{
+                        label: 'Number of Reports',
+                        data: data.map(item => item[1]),
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                  },
+               options: {
+                responsive: true,
+               maintainAspectRatio: false,
+                    scales: {
+                         y: {
+                            beginAtZero: true
+                          }
+                        }
+                  }
+              });
+        }
+         // Function to create stacked bar chart
+        function createStackedBarChart(data) {
+            const ctx = document.getElementById('stackedBarChart').getContext('2d');
+
+             const labels = Object.keys(data);
+             const attackTypes = new Set();
+           for (const location in data) {
+              for (const attackType in data[location]) {
+                  attackTypes.add(attackType);
+            }
+          }
+            const datasets = Array.from(attackTypes).map(attackType => ({
+                label: attackType,
+                  data: labels.map(location => data[location][attackType] || 0),
+                  backgroundColor: `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.7)`,
+                  borderColor: 'rgba(54, 162, 235, 1)',
+                  borderWidth: 1
+            }));
+            new Chart(ctx, {
+              type: 'bar',
+                data: {
+                   labels: labels,
+                    datasets: datasets
+                  },
+                  options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                       scales: {
+                            x: {
+                                stacked: true,
+                           },
+                           y: {
+                                stacked: true,
+                             }
+                           }
+                   }
+              });
+          }
+         // Function to create recent reports table
+        function createRecentReportsTable(data) {
+           const tableBody = document.getElementById('recentReportsTable').querySelector('tbody');
+            tableBody.innerHTML = '';
+            data.forEach(report => {
+               const row = tableBody.insertRow();
+                const dateCell = row.insertCell();
+                const attackTypeCell = row.insertCell();
+                const stateCell = row.insertCell();
+
+                dateCell.textContent = report.date;
+                attackTypeCell.textContent = report.attack_type;
+                stateCell.textContent = report.state;
+           });
+        }
+
+         // Fetch and render chart data
+         fetch('/api/attack-types-data')
+           .then(response => response.json())
+             .then(data => createBarChart(data))
+             .catch(error => console.error('Error fetching attack types data:', error));
+
+          fetch('/api/incident-locations-data')
+            .then(response => response.json())
+              .then(data => createPieChart(data))
+              .catch(error => console.error('Error fetching location data:', error));
+
+         fetch('/api/time-series-data')
+            .then(response => response.json())
+             .then(data => createTimeSeriesChart(data))
+               .catch(error => console.error('Error fetching time series data:', error));
+
+            fetch('/api/stacked-bar-data')
+              .then(response => response.json())
+                 .then(data => createStackedBarChart(data))
+                  .catch(error => console.error('Error fetching stacked bar data:', error));
+
+         fetch('/api/recent-reports')
+             .then(response => response.json())
+               .then(data => createRecentReportsTable(data))
+                .catch(error => console.error('Error fetching recent reports:', error));
+
         });
-        console.log("Map initialized");
-    }
-    window.onload = function () {
-        setTimeout(initMap, 100);
-    };
-    // fetch('/api/cybercrime-data')
-    //   .then(response => response.json())
-    //  .then(data => {
-    //    // use the fetched data to create the map and other charts
-    //})
 </script>
 {% endblock %}

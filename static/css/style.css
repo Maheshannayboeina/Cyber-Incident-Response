@@ -96,7 +96,7 @@ h5 {
 }
 
 h6 {
-  color: var(--primary-color);
+  color: var(--dark-color);
   font-size: var(--h6-font-size);
 }
 
@@ -436,6 +436,7 @@ strong {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
+  background-image: linear-gradient(15deg, #783ee3 -10%, #69e6c9 100%);
   border-bottom: 10px solid var(--secondary-color);
   position: relative;
 }
@@ -469,7 +470,7 @@ strong {
 
 .site-footer .dropdown-item:hover {
   background-color: transparent;
-  color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 .site-footer .dropdown-menu li:first-child .dropdown-item {
@@ -485,7 +486,7 @@ strong {
 }
 
 .site-footer .dropdown-toggle:hover {
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
   border-color: transparent;
 }
 .site-footer-links {
@@ -499,12 +500,13 @@ strong {
 }
 
 .site-footer-link {
-  color: var(--secondary-color);
+  color: var(--white-color);
   font-size: var(--copyright-font-size);
   font-weight: var(--font-weight-medium);
   line-height: normal;
 }
 .copyright-text {
+  color: var(--white-color);
   font-size: var(--copyright-font-size);
 }
 .form-control {
@@ -549,8 +551,11 @@ resize: none;
 .analytics-text {
   color: white; /* This is an example color. You can change this to any color you like */
 }
+
+/* --------------------- VIDEO SECTION ------------------------ */
+
 .video-section {
- background-image: linear-gradient(to right, #a4e5de, #8113b1);
+  background-image: linear-gradient(15deg, #32e0d5 20%, #a52bc0 100%);
  padding-top: 50px;
   padding-bottom: 50px;
   margin-left: -15px;
@@ -591,4 +596,21 @@ resize: none;
 }
 .rounded-input {
   border-radius: 18px; /* Adjust the value to control the roundness */
+}
+.about-text {
+  color: black;
+}
+.learn-card {
+    background: #f0f8ff;
+    color: #000000; /* Example text color */
+     border-radius: 15px;
+    width: 200px;
+    margin-bottom:10px;
+    border: 1px solid #ccc;
+}
+.learn-card p{
+ color: #000;
+}
+.section-padding p{
+  color: black;
 }

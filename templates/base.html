@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{% block title %}Crime RD{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +26,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ url_for('index') }}">
-                    <i class="bi-back"></i>
+                    <img src="{{ url_for('static', filename='images/favicon-hd.png') }}" alt="Favicon" style="width: 40px;">
                     <span>Crime Reporting Dashboard</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">

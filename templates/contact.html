@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Contact Us - Incident Response{% endblock %}
+{% block title %}Report - Crime RD{% endblock %}
 {% block content %}
 <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
     <div class="container">
@@ -7,15 +7,24 @@
             <div class="col-lg-8 col-12 mx-auto">
                 <h1 class="text-white text-center">Report an Incident</h1>
                 <h6 class="text-center">Please fill out the form below to report an incident.</h6>
-                <div class="contact-container">
-                    <p class="text-center contact-text">Contact us at: <a
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12 mx-auto">
+                 <div class="contact-container" >
+                    <p class="text-center" style="color:#717275">Contact us at: <a
                             href="mailto:info@sakec.ac.in">info@sakec.ac.in</a></p>
-                    <p class="text-center contact-text">Call us at: <a href="tel:022-25580854">022-25580854</a></p>
+                    <p class="text-center"  style="color:#717275">Call us at: <a href="tel:022-25580854">022-25580854</a></p>
                 </div>
 
-                <div class="mt-5">
-                    <h2 class="text-center text-white">Incident Report Form</h2>
-                      <div class="mb-3 text-white text-center">
+                <div class="mt-5" style="background-color: #f0f8ff; padding: 20px; border-radius: 10px;">
+                    <h2 class="text-center">Incident Report Form</h2>
+                      <div class="mb-3 text-center">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input" name="registration_type" value="anonymous" id="anonymous_radio" checked>
                             Anonymous Report
@@ -28,20 +37,29 @@
                     <form method="post" class="contact-form" id="report_form">
                         <div id="registered_fields">
                         <div class="mb-3">
-                            <label for="name" class="form-label text-white">Your Name</label>
+                            <label for="name" class="form-label">Your Name</label>
                             <input type="text" class="form-control rounded-input" id="name" name="name">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label text-white">Your Email</label>
+                            <label for="email" class="form-label">Your Email</label>
                             <input type="email" class="form-control rounded-input" id="email" name="email">
                         </div>
                          <div class="mb-3">
-                            <label for="mobile" class="form-label text-white">Mobile Number</label>
+                            <label for="mobile" class="form-label">Mobile Number</label>
                             <input type="tel" class="form-control rounded-input" id="mobile" name="mobile">
                         </div>
+                         <div class="mb-3">
+                             <label for="gender" class="form-label">Gender</label>
+                             <select class="form-select rounded-input" id="gender" name="gender" required>
+                                <option value="" disabled selected>Select a Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                             </select>
+                         </div>
                         </div>
                         <div class="mb-3">
-                             <label for="state" class="form-label text-white">State</label>
+                             <label for="state" class="form-label">State</label>
                              <select class="form-select rounded-input" id="state" name="state" required>
                                 <option value="" disabled selected>Select a state</option>
                                 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -75,15 +93,15 @@
                             </select>
                          </div>
                         <div class="mb-3">
-                            <label for="location" class="form-label text-white">Location of Incident</label>
+                            <label for="location" class="form-label">Location of Incident</label>
                             <input type="text" class="form-control rounded-input" id="location" name="location" required>
                         </div>
                        <div class="mb-3">
-                            <label for="date" class="form-label text-white">Date of Incident</label>
+                            <label for="date" class="form-label">Date of Incident</label>
                             <input type="date" class="form-control rounded-input" id="date" name="date" required>
                         </div>
                          <div class="mb-3">
-                            <label for="description" class="form-label text-white">Description of Incident</label>
+                            <label for="description" class="form-label">Description of Incident</label>
                             <textarea class="form-control rounded-input" id="description" name="description" rows="5" required style="text-align: left;"></textarea>
                         </div>
                         <div class="d-flex justify-content-center">
@@ -101,8 +119,6 @@
                     </div>
                     {% endif %}
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -119,11 +135,13 @@
          document.getElementById('name').removeAttribute('required');
           document.getElementById('email').removeAttribute('required');
            document.getElementById('mobile').removeAttribute('required');
+             document.getElementById('gender').removeAttribute('required');
       } else {
         registeredFields.style.display = 'block';
         document.getElementById('name').setAttribute('required','');
           document.getElementById('email').setAttribute('required','');
           document.getElementById('mobile').setAttribute('required','');
+          document.getElementById('gender').setAttribute('required','');
       }
     }
 
